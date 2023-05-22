@@ -15,6 +15,19 @@ void main() {
     });
   });
 
+  group('PISPASEP validator', () {
+    test('Valid PISPASEP should return true', () {
+      expect(BRValidators.validatePISPASEP('081.43434.08-5'), true);
+      expect(BRValidators.validatePISPASEP('51757815531'), true);
+    });
+
+    test('Invalid CPF should return false', () {
+      expect(BRValidators.validatePISPASEP('123'), false);
+      expect(BRValidators.validatePISPASEP('12345678901'), false);
+      expect(BRValidators.validatePISPASEP('123.456.789-01'), false);
+    });
+  });
+
   group('CNPJ validator', () {
     test('Valid CNPJ should return true', () {
       expect(BRValidators.validateCNPJ('69.404.688/0001-71'), true);

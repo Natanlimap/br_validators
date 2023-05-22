@@ -2,6 +2,7 @@ library br_validators;
 
 part 'cpf_validator.dart';
 part 'cnpj_validator.dart';
+part 'pis_pasep_validator.dart';
 
 class BRValidators {
   static bool validateCPF(String cpf) {
@@ -10,5 +11,9 @@ class BRValidators {
 
   static bool validateCNPJ(String cnpj) {
     return _CNPJValidator.validate(cnpj);
+  }
+
+  static bool validatePISPASEP(String pisPasep) {
+    return _PisPasepValidator.validate(pisPasep);
   }
 }

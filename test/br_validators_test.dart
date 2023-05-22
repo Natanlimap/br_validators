@@ -40,4 +40,16 @@ void main() {
       expect(BRValidators.validateCNPJ('12.345.678/0001-91'), false);
     });
   });
+  group('CEP validator', () {
+    test('Valid CEP should return true', () {
+      expect(BRValidators.validateCEP('12345678'), true);
+      expect(BRValidators.validateCEP('12345-678'), true);
+    });
+
+    test('Invalid CEP should return false', () {
+      expect(BRValidators.validateCEP('123'), false);
+      expect(BRValidators.validateCEP('123456789'), false);
+      expect(BRValidators.validateCEP('12345-6789'), false);
+    });
+  });
 }

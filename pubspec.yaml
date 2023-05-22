@@ -1,6 +1,6 @@
 name: br_validators
-description: A new Flutter package project.
-version: 0.0.1
+description: O pacote BRValidators fornece uma série de funções para a validação de diferentes tipos de dados frequentemente usados no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones fixos e móveis, e CNH.
+version: 1.0.0
 homepage:
 
 environment:

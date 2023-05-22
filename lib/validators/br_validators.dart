@@ -33,10 +33,6 @@ class BRValidators {
     return _PhoneNumberValidator.validate(mobileNumber);
   }
 
-  static bool validatePhoneNumber(String phoneNumber) {
-    return _PhoneNumberValidator.validate(phoneNumber);
-  }
-
   static bool validateCNH(String cnh) {
     return _CNHValidator.validate(cnh);
   }

@@ -1,8 +1,8 @@
-# BRValidator
+# BRValidators
 
 ## Descrição
 
-O pacote BRValidator fornece uma série de funções para a validação de diferentes tipos de dados frequentemente usados no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones fixos e móveis, e CNH. Além disso, agora o pacote também fornece máscaras de entrada para esses mesmos dados.
+O pacote BRValidators fornece uma série de funções para a validação de diferentes tipos de dados frequentemente usados no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones fixos e móveis, e CNH. Além disso, agora o pacote também fornece máscaras de entrada para esses mesmos dados.
 
 Este pacote é muito útil em muitos cenários diferentes, como em sistemas de cadastro de pessoas ou empresas, sistemas de venda online onde é necessário validar o CEP, ou sistemas de gerenciamento de motoristas onde é necessário validar a CNH.
 
@@ -21,7 +21,7 @@ Em seguida, execute o comando `flutter pub get` (para projetos Flutter) ou `pub 
 
 ## Como usar
 
-### BRValidator
+### BRValidators
 
 Para usar as funções de validação fornecidas pelo pacote, primeiro importe o pacote no seu código:
 
@@ -32,14 +32,14 @@ import 'package:br_validators/br_validators.dart';
 Em seguida, você pode usar as funções de validação. Aqui estão alguns exemplos:
 
 ```dart
-bool isValidCPF = BRValidator.validateCPF('123.456.789-09');
-bool isValidCNPJ = BRValidator.validateCNPJ('12.345.678/0001-95');
-bool isValidPISPASEP = BRValidator.validatePISPASEP('123.45678.90-1');
-bool isValidCEP = BRValidator.validateCEP('12345-678');
-bool isValidLandlinePhone = BRValidator.validateLandlinePhone('(11) 1234-5678');
-bool isValidMobileNumber = BRValidator.validateMobileNumber('(11) 91234-5678');
-bool isValidPhoneNumber = BRValidator.validatePhoneNumber('(11) 91234-5678');
-bool isValidCNH = BRValidator.validateCNH('12345678909');
+bool isValidCPF = BRValidators.validateCPF('123.456.789-09');
+bool isValidCNPJ = BRValidators.validateCNPJ('12.345.678/0001-95');
+bool isValidPISPASEP = BRValidators.validatePISPASEP('123.45678.90-1');
+bool isValidCEP = BRValidators.validateCEP('12345-678');
+bool isValidLandlinePhone = BRValidators.validateLandlinePhone('(11) 1234-5678');
+bool isValidMobileNumber = BRValidators.validateMobileNumber('(11) 91234-5678');
+bool isValidPhoneNumber = BRValidators.validatePhoneNumber('(11) 91234-5678');
+bool isValidCNH = BRValidators.validateCNH('12345678909');
 ```
 
 Cada função de validação retornará `true` se o valor fornecido for válido, ou `false` se não for válido.

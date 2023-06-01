@@ -1,14 +1,13 @@
-Claro! Com base na adição que você fez, seu changelog atualizado ficaria assim:
-
 # Changelog
+
+## [2.0.3]
+
+- Alterado documentação
 
 ## [2.0.2]
 
-- Alterado a library da classe BRValidators para remover conflito do dart docs
+- Alterado a library da classe BRValidators para remover conflito
 
-## [2.0.1]
-
-- Renomeado o nome da classe `BRValidators` para `BRValidator` para corrigir um erro no Dart Docs
 
 ## [2.0.0]
 

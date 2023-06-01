@@ -1,5 +1,5 @@
 name: br_validators
-description: O pacote BRValidators fornece uma série de funções para a validação de diferentes tipos de dados frequentemente usados no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones fixos e móveis, e CNH.
+description: BRValidators fornece funções para validação e formatação (máscaras) de dados comuns no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones e CNH.
 version: 1.0.0
 repository: https://github.com/Natanlimap/br_validators
 

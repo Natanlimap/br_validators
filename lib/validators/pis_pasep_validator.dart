@@ -1,6 +1,13 @@
 part of br_validators;
 
+/// Class for validating Brazilian PIS/PASEP numbers.
 class _PisPasepValidator {
+  /// Validates a Brazilian PIS/PASEP number.
+  ///
+  /// The PIS/PASEP number should be a string consisting of 11 digits.
+  /// It may include non-digit characters, which will be removed before validation.
+  ///
+  /// Returns `true` if the PIS/PASEP number is valid, otherwise `false`.
   static bool validate(String pisPasepNumber) {
     pisPasepNumber = pisPasepNumber.replaceAll(RegExp(r'[^\d]'), '');
 

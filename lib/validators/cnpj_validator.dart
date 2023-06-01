@@ -1,6 +1,13 @@
 part of br_validators;
 
+/// Class for validating Brazilian CNPJ (National Registry of Legal Entities) numbers.
 class _CNPJValidator {
+  /// Validates a Brazilian CNPJ (National Registry of Legal Entities) number.
+  ///
+  /// The CNPJ number should be a string consisting of 14 digits.
+  /// It may include non-digit characters, which will be removed before validation.
+  ///
+  /// Returns `true` if the CNPJ is valid, otherwise `false`.
   static bool validate(String cnpj) {
     cnpj = cnpj.replaceAll(RegExp(r'[^0-9]'), '');
 

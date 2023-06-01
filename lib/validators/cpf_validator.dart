@@ -1,6 +1,13 @@
 part of br_validators;
 
+/// Class for validating Brazilian CPF (Individual Taxpayer Registry) numbers.
 class _CPFValidator {
+  /// Validates a Brazilian CPF (Individual Taxpayer Registry) number.
+  ///
+  /// The CPF number should be a string consisting of 11 digits.
+  /// It may include non-digit characters, which will be removed before validation.
+  ///
+  /// Returns `true` if the CPF is valid, otherwise `false`.
   static bool validate(String cpf) {
     cpf = cpf.replaceAll(RegExp(r'[^0-9]'), '');
 

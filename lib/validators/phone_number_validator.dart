@@ -1,6 +1,13 @@
 part of br_validators;
 
+/// Class for validating Brazilian phone numbers.
 class _PhoneNumberValidator {
+  /// Validates a Brazilian phone number.
+  ///
+  /// The phone number should be a string consisting of 9 or 11 digits.
+  /// It may include non-digit characters, which will be removed before validation.
+  ///
+  /// Returns `true` if the phone number is valid, otherwise `false`.
   static bool validate(String mobileNumber) {
     mobileNumber = mobileNumber.replaceAll(RegExp(r'[^\d]'), '');
 

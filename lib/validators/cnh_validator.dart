@@ -1,6 +1,12 @@
 part of br_validators;
 
+/// Class for validating Brazilian CNH (National Driver's License) numbers.
 class _CNHValidator {
+  /// Validates a Brazilian CNH (National Driver's License) number.
+  ///
+  /// The CNH number should be a string consisting of 11 digits.
+  ///
+  /// Returns `true` if the CNH is valid, otherwise `false`.
   static bool validate(String cnh) {
     if (cnh.length != 11) {
       return false;

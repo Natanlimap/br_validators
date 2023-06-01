@@ -1,21 +1,27 @@
 Claro! Com base na adição que você fez, seu changelog atualizado ficaria assim:
 
 # Changelog
+
 ## [2.0.2]
-- Docs: atualização do readme.md
+
+- Alterado a library da classe BRValidators para remover conflito do dart docs
 
 ## [2.0.1]
+
 - Renomeado o nome da classe `BRValidators` para `BRValidator` para corrigir um erro no Dart Docs
 
 ## [2.0.0]
+
 Para manter o padrão do código, renomeei o nome das variáveis para inglês.
+
 ### Alterado
+
 - Renomeado `BRMasks.celular`para `BRMasks.mobilePhone`
 - Renomeado `BRMasks.telefoneFixo`para `BRMasks.landlinePhone`
 - Renomeado `BRMasks.data`para `BRMasks.date`
 
-
 ## [1.1.0]
+
 ### Adicionado
 
 - Classe `BRMasks` para formatar inputs com máscaras.
@@ -29,6 +35,7 @@ Para manter o padrão do código, renomeei o nome das variáveis para inglês.
 - Máscara de data na classe `BRMasks` com o atributo `BRMasks.data`.
 
 ## [1.0.0]
+
 ### Adicionado
 
 - Implementação inicial do pacote BRValidator.

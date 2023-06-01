@@ -1,6 +1,6 @@
 name: br_validators
 description: BRValidators fornece funções para validação e formatação (máscaras) de dados comuns no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones e CNH.
-version: 2.0.1
+version: 2.0.2
 repository: https://github.com/Natanlimap/br_validators
 
 environment:

@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   mask_text_input_formatter: 
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,4 +1,4 @@
-import 'package:br_validators/validators/validators.dart';
+import 'package:br_validators/validators/br_validator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

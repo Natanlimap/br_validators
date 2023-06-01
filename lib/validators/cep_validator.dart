@@ -1,4 +1,4 @@
-part of br_validators;
+part of br_validator;
 
 /// Class for validating Brazilian CEP (Postal Code) numbers.
 class _CEPValidator {

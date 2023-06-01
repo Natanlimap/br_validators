@@ -1,6 +1,11 @@
 Claro! Com base na adição que você fez, seu changelog atualizado ficaria assim:
 
 # Changelog
+## [2.0.2]
+- Docs: atualização do readme.md
+
+## [2.0.1]
+- Renomeado o nome da classe `BRValidators` para `BRValidator` para corrigir um erro no Dart Docs
 
 ## [2.0.0]
 Para manter o padrão do código, renomeei o nome das variáveis para inglês.
@@ -26,12 +31,12 @@ Para manter o padrão do código, renomeei o nome das variáveis para inglês.
 ## [1.0.0]
 ### Adicionado
 
-- Implementação inicial do pacote BRValidators.
-- Validação de CPF com o método `BRValidators.validateCPF`.
-- Validação de CNPJ com o método `BRValidators.validateCNPJ`.
-- Validação de PIS/PASEP com o método `BRValidators.validatePISPASEP`.
-- Validação de CEP com o método `BRValidators.validateCEP`.
-- Validação de telefone fixo com o método `BRValidators.validateLandlinePhone`.
-- Validação de número de celular com o método `BRValidators.validateMobileNumber`.
-- Validação de número de telefone genérico (pode ser fixo ou móvel) com o método `BRValidators.validatePhoneNumber`.
-- Validação de CNH com o método `BRValidators.validateCNH`.
+- Implementação inicial do pacote BRValidator.
+- Validação de CPF com o método `BRValidator.validateCPF`.
+- Validação de CNPJ com o método `BRValidator.validateCNPJ`.
+- Validação de PIS/PASEP com o método `BRValidator.validatePISPASEP`.
+- Validação de CEP com o método `BRValidator.validateCEP`.
+- Validação de telefone fixo com o método `BRValidator.validateLandlinePhone`.
+- Validação de número de celular com o método `BRValidator.validateMobileNumber`.
+- Validação de número de telefone genérico (pode ser fixo ou móvel) com o método `BRValidator.validatePhoneNumber`.
+- Validação de CNH com o método `BRValidator.validateCNH`.

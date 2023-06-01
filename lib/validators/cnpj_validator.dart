@@ -1,4 +1,4 @@
-part of br_validators;
+part of br_validator;
 
 /// Class for validating Brazilian CNPJ (National Registry of Legal Entities) numbers.
 class _CNPJValidator {

@@ -1,5 +1,5 @@
 /// Library containing validators for Brazilian documents.
-library br_validators;
+library br_validator;
 
 part 'cpf_validator.dart';
 part 'cnpj_validator.dart';

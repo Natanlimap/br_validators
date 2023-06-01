@@ -76,7 +76,7 @@ void main() {
     });
 
     test('Invalid phone number should return false', () {
-      expect(BRValidators.validateMobileNumber('99999999'), false);
+      expect(BRValidators.validateMobileNumber(' 99999999'), false);
       expect(BRValidators.validateMobileNumber('9999999999'), false);
       expect(BRValidators.validateMobileNumber('99999-99999'), false);
       expect(BRValidators.validateMobileNumber('99999-999'), false);

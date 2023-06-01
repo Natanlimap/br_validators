@@ -32,17 +32,18 @@ void main() {
     });
 
     test('Masks celular correctly', () {
-      final celularFormatter = BRMasks.celular;
-      String maskedCelular = celularFormatter.maskText('12345678901');
+      final mobilePhoneFormatter = BRMasks.mobilePhone;
+      String maskedCelular = mobilePhoneFormatter.maskText('12345678901');
 
       expect(maskedCelular, '(12) 34567-8901');
     });
 
     test('Masks telefoneFixo correctly', () {
-      final telefoneFixoFormatter = BRMasks.telefoneFixo;
-      String maskedTelefoneFixo = telefoneFixoFormatter.maskText('1234567890');
+      final landlinePhoneFormatter = BRMasks.landlinePhone;
+      String maskedLandlinePhone =
+          landlinePhoneFormatter.maskText('1234567890');
 
-      expect(maskedTelefoneFixo, '(12) 3456-7890');
+      expect(maskedLandlinePhone, '(12) 3456-7890');
     });
 
     test('Masks pisPasep correctly', () {
@@ -53,7 +54,7 @@ void main() {
     });
 
     test('Masks data correctly', () {
-      final dataFormatter = BRMasks.data;
+      final dataFormatter = BRMasks.date;
       String maskedData = dataFormatter.maskText('31122020');
 
       expect(maskedData, '31/12/2020');

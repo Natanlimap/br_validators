@@ -1,6 +1,15 @@
 Claro! Com base na adição que você fez, seu changelog atualizado ficaria assim:
 
 # Changelog
+
+## [2.0.0]
+Para manter o padrão do código, renomeei o nome das variáveis para inglês.
+### Alterado
+- Renomeado `BRMasks.celular`para `BRMasks.mobilePhone`
+- Renomeado `BRMasks.telefoneFixo`para `BRMasks.landlinePhone`
+- Renomeado `BRMasks.data`para `BRMasks.date`
+
+
 ## [1.1.0]
 ### Adicionado
 

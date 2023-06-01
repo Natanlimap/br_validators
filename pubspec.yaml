@@ -1,6 +1,6 @@
 name: br_validators
 description: BRValidators fornece funções para validação e formatação (máscaras) de dados comuns no Brasil, como CPF, CNPJ, PIS/PASEP, CEP, telefones e CNH.
-version: 1.0.0
+version: 2.0.0
 repository: https://github.com/Natanlimap/br_validators
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mask_text_input_formatter: 
+  mask_text_input_formatter: ^2.4.0
 
 dev_dependencies:
   flutter_test:

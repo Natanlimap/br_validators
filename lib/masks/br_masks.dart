@@ -27,13 +27,13 @@ class BRMasks {
   );
 
   /// Mask pattern for celular (mobile phone) numbers.
-  static final celular = MaskTextInputFormatter(
+  static final mobilePhone = MaskTextInputFormatter(
     mask: '(##) #####-####',
     filter: {"#": RegExp(r'[0-9]')},
   );
 
   /// Mask pattern for telefoneFixo (landline phone) numbers.
-  static final telefoneFixo = MaskTextInputFormatter(
+  static final landlinePhone = MaskTextInputFormatter(
     mask: '(##) ####-####',
     filter: {"#": RegExp(r'[0-9]')},
   );
@@ -45,7 +45,7 @@ class BRMasks {
   );
 
   /// Mask pattern for date (DD/MM/YYYY) format.
-  static final data = MaskTextInputFormatter(
+  static final date = MaskTextInputFormatter(
     mask: '##/##/####',
     filter: {"#": RegExp(r'[0-9]')},
   );

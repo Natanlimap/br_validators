@@ -16,12 +16,13 @@ class _PhoneNumberValidator {
     }
 
     int firstDigit = int.parse(mobileNumber[0]);
+    int thirdDigit = int.parse(mobileNumber[2]);
 
     if (mobileNumber.length == 9 && firstDigit != 9) {
       return false;
     }
 
-    if (mobileNumber.length == 11 && (firstDigit != 9 && firstDigit != 8)) {
+    if (mobileNumber.length == 11 && (thirdDigit != 9 && thirdDigit != 8)) {
       return false;
     }
 

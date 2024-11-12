@@ -82,6 +82,7 @@ void main() {
       expect(BRValidators.validateMobileNumber('99999-999'), false);
       expect(BRValidators.validateMobileNumber('99999-99A9'), false);
       expect(BRValidators.validateMobileNumber('99999-99A9'), false);
+      expect(BRValidators.validateMobileNumber('(11) 99999-9999'), true);
     });
   });
 

@@ -15,7 +15,8 @@ class _PhoneNumberValidator {
       return false;
     }
 
-    int firstDigit = int.parse(mobileNumber[0]);
+    // If it has 11 digits, the first 2 are the area code
+    int firstDigit = int.parse(mobileNumber[mobileNumber.length == 11 ? 2 : 0]);
 
     if (mobileNumber.length == 9 && firstDigit != 9) {
       return false;

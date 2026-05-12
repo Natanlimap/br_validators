@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0]
+
+### Alterado (breaking)
+
+- **CNPJ alfanumérico**: validador e máscara agora suportam o formato alfanumérico definido pela IN RFB 2.229/2024. Letras A–Z (maiúsculas/minúsculas) são aceitas nas 12 posições base; os 2 dígitos verificadores continuam numéricos.
+- **CPF**: rejeita sequências com todos os dígitos iguais (ex.: `111.111.111-11`), que nunca foram CPFs válidos.
+- **CNH**: rejeita sequências com todos os dígitos iguais (ex.: `00000000000`).
+- **Máscara CNPJ** (`BRMasks.cnpj`): caractere `@` agora aceita `[A-Za-z0-9]` e `#` apenas `[0-9]` (dois últimos dígitos verificadores). Atualização necessária em qualquer código que dependia do filtro anterior.
+- `pubspec.yaml`: SDK constraint ampliada para `<4.0.0`.
+
 ## [2.0.3]
 
 - Alterado documentação

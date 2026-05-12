@@ -12,6 +12,9 @@ void main() {
       expect(BRValidators.validateCPF('123'), false);
       expect(BRValidators.validateCPF('12345678901'), false);
       expect(BRValidators.validateCPF('123.456.789-01'), false);
+      // Repeated-digit sequences are not valid CPFs
+      expect(BRValidators.validateCPF('00000000000'), false);
+      expect(BRValidators.validateCPF('111.111.111-11'), false);
     });
   });
 
@@ -29,15 +32,25 @@ void main() {
   });
 
   group('CNPJ validator', () {
-    test('Valid CNPJ should return true', () {
+    test('Valid numeric CNPJ should return true', () {
       expect(BRValidators.validateCNPJ('69.404.688/0001-71'), true);
       expect(BRValidators.validateCNPJ('95385916000113'), true);
+    });
+
+    test('Valid alphanumeric CNPJ should return true', () {
+      // 1A.2B3.C4D/5E6F-97  →  base "1A2B3C4D5E6F", check digits 97
+      expect(BRValidators.validateCNPJ('1A.2B3.C4D/5E6F-97'), true);
+      expect(BRValidators.validateCNPJ('1A2B3C4D5E6F97'), true);
     });
 
     test('Invalid CNPJ should return false', () {
       expect(BRValidators.validateCNPJ('123'), false);
       expect(BRValidators.validateCNPJ('12345678000191'), false);
       expect(BRValidators.validateCNPJ('12.345.678/0001-91'), false);
+      // All-same base chars must be rejected
+      expect(BRValidators.validateCNPJ('00000000000000'), false);
+      // Wrong check digits on alphanumeric base
+      expect(BRValidators.validateCNPJ('1A2B3C4D5E6F00'), false);
     });
   });
   group('CEP validator', () {

@@ -12,6 +12,11 @@ class _CNHValidator {
       return false;
     }
 
+    // Reject sequences like 00000000000, 11111111111, etc.
+    if (RegExp(r'^(.)\1{10}$').hasMatch(cnh)) {
+      return false;
+    }
+
     int verificationDigit1Adjustment = 0;
     int sum1 = 0;
 

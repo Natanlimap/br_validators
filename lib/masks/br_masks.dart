@@ -21,9 +21,13 @@ class BRMasks {
   );
 
   /// Mask pattern for CNPJ (National Registry of Legal Entities) numbers.
+  /// Supports the alphanumeric format introduced by IN RFB 2.229/2024.
   static final cnpj = MaskTextInputFormatter(
-    mask: '##.###.###/####-##',
-    filter: {"#": RegExp(r'[0-9]')},
+    mask: '@@.@@@.@@@/@@@@-##',
+    filter: {
+      "@": RegExp(r'[A-Za-z0-9]'),
+      "#": RegExp(r'[0-9]'),
+    },
   );
 
   /// Mask pattern for celular (mobile phone) numbers.

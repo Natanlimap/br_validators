@@ -15,6 +15,11 @@ class _CPFValidator {
       return false;
     }
 
+    // Reject sequences like 000.000.000-00, 111.111.111-11, etc.
+    if (RegExp(r'^(.)\1{10}$').hasMatch(cpf)) {
+      return false;
+    }
+
     List<int> numbers = cpf.split('').map(int.parse).toList();
     int firstSum = 0;
 

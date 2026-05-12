@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.1]
+
+### Corrigido
+
+- **CNPJ alfanumérico**: Corrigido o cálculo numérico dos caracteres alfanuméricos para aderir corretamente às normas definidas pela IN RFB 2.229/2024 (cálculo pela tabela ASCII `ord(char) - 48`).
+
 ## [3.1.0]
 
 ### Adicionado

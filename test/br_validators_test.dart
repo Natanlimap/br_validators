@@ -55,15 +55,21 @@ void main() {
     });
 
     test('valid alphanumeric CNPJ — bare', () {
-      expect(BRValidators.validateCNPJ('1A2B3C4D5E6F97'), true);
+      expect(BRValidators.validateCNPJ('NZK5MGM2000174'), true);
     });
 
     test('valid alphanumeric CNPJ — formatted', () {
-      expect(BRValidators.validateCNPJ('1A.2B3.C4D/5E6F-97'), true);
+      expect(BRValidators.validateCNPJ('NZ.K5M.GM2/0001-74'), true);
+      expect(BRValidators.validateCNPJ('19.YRN.ME2/0001-70'), true);
+      expect(BRValidators.validateCNPJ('19.YRN.ME2/MN01-67'), true);
+      expect(BRValidators.validateCNPJ('27.DWD.5H7/0001-85'), true);
+      expect(BRValidators.validateCNPJ('9A.BX0.PHA/0001-61'), true);
+      expect(BRValidators.validateCNPJ('EK.R8E.HNA/0001-80'), true);
+      expect(BRValidators.validateCNPJ('5A.2K1.WP3/0001-85'), true);
     });
 
     test('valid alphanumeric CNPJ — lowercase is accepted', () {
-      expect(BRValidators.validateCNPJ('1a2b3c4d5e6f97'), true);
+      expect(BRValidators.validateCNPJ('nzk5mgm2000174'), true);
     });
 
     test('invalid CNPJ — wrong check digits', () {
@@ -224,7 +230,7 @@ void main() {
 
     test('valid PIX — CNPJ key', () {
       expect(BRValidators.validatePixKey('69.404.688/0001-71'), true);
-      expect(BRValidators.validatePixKey('1A2B3C4D5E6F97'), true);
+      expect(BRValidators.validatePixKey('NZK5MGM2000174'), true);
     });
 
     test('valid PIX — e-mail key', () {

@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.1.0]
+
+### Adicionado
+
+- **Chave PIX** (`validatePixKey`): valida os 5 tipos de chave definidos pelo Banco Central — CPF, CNPJ, e-mail, telefone (`+55…`) e chave aleatória (UUID v4). Máscara: nenhuma (formato variável).
+- **Placa veicular** (`validateVehiclePlate`): aceita formato legado (`ABC-1234`) e Mercosul (`ABC1D23`). Máscaras: `BRMasks.vehiclePlateLegacy` e `BRMasks.vehiclePlateMercosul`.
+- **RENAVAM** (`validateRENAVAM`): valida 9 ou 11 dígitos com dígito verificador módulo 11. Máscara: `BRMasks.renavam`.
+- **Inscrição Estadual** (`validateIE(ie, uf)`): validação completa para os 27 estados + DF, cada um com seu próprio algoritmo de dígito verificador. Máscara genérica: `BRMasks.ie`.
+- **Título de Eleitor** (`validateTituloEleitor`): valida 12 dígitos com dois dígitos verificadores e código de estado (01–28), incluindo regras especiais para SP e MG. Máscara: `BRMasks.tituloEleitor`.
+- **IBAN Brasil** (`validateIBAN`): valida o formato `BRkk BBBBB SSSSS CCCCCCCCCC T N` (29 chars) via algoritmo ISO 13616 mod-97. Máscara: `BRMasks.iban`.
+- **Passaporte brasileiro** (`validatePassport`): valida formato `AA######` (2 letras + 6 dígitos). Máscara: `BRMasks.passport`.
+- **UF** (`validateUF`): valida se a sigla é uma das 27 UFs brasileiras válidas (case-insensitive).
+- **NUP** (`validateNUP`): valida o Número Único de Protocolo governamental `OOOOO.SSSSSS/AAAA-DD` com dígito verificador módulo 11. Máscara: `BRMasks.nup`.
+
 ## [3.0.0]
 
 ### Alterado (breaking)

@@ -32,8 +32,7 @@ class _PixKeyValidator {
           .hasMatch(key);
 
   // Phone: +55 followed by 10 (landline) or 11 (mobile) digits.
-  static bool _isPhone(String key) =>
-      RegExp(r'^\+55\d{10,11}$').hasMatch(key);
+  static bool _isPhone(String key) => RegExp(r'^\+55\d{10,11}$').hasMatch(key);
 
   // UUID v4: xxxxxxxx-xxxx-4xxx-[89ab]xxx-xxxxxxxxxxxx
   static bool _isRandomKey(String key) => RegExp(

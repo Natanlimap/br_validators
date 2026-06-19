@@ -57,8 +57,7 @@ class BRValidators {
       _RenavamValidator.validate(renavam);
 
   /// Validates an Inscrição Estadual (state tax registration) for the given [uf].
-  static bool validateIE(String ie, String uf) =>
-      _IEValidator.validate(ie, uf);
+  static bool validateIE(String ie, String uf) => _IEValidator.validate(ie, uf);
 
   /// Validates a Título de Eleitor (voter registration card) number.
   static bool validateTituloEleitor(String titulo) =>

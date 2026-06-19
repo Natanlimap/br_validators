@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2]
+
+### Corrigido
+
+- **CNPJ alfanumérico**: resolvidos conflitos de merge nos testes mantendo os casos válidos conforme o cálculo oficial `ASCII - 48`.
+- **Documentação**: corrigido exemplo de CNPJ alfanumérico no README para usar dígitos verificadores válidos.
+
 ## [3.1.1]
 
 ### Corrigido

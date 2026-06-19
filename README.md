@@ -36,7 +36,7 @@ Aceita CNPJ numérico clássico e o novo formato alfanumérico onde as 12 posiç
 
 ```dart
 BRValidators.validateCNPJ('11.222.333/0001-81'); // true
-BRValidators.validateCNPJ('12.ABC.345/0001-05'); // true — alfanumérico
+BRValidators.validateCNPJ('12.ABC.345/0001-88'); // true — alfanumérico
 ```
 
 ### PIS/PASEP

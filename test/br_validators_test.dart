@@ -56,6 +56,7 @@ void main() {
 
     test('valid alphanumeric CNPJ — bare', () {
       expect(BRValidators.validateCNPJ('NZK5MGM2000174'), true);
+      expect(BRValidators.validateCNPJ('1A2B3C4D5E6F34'), true);
     });
 
     test('valid alphanumeric CNPJ — formatted', () {
@@ -66,10 +67,14 @@ void main() {
       expect(BRValidators.validateCNPJ('9A.BX0.PHA/0001-61'), true);
       expect(BRValidators.validateCNPJ('EK.R8E.HNA/0001-80'), true);
       expect(BRValidators.validateCNPJ('5A.2K1.WP3/0001-85'), true);
+      expect(BRValidators.validateCNPJ('1A.2B3.C4D/5E6F-34'), true);
+      expect(BRValidators.validateCNPJ('8D.60C.7W0/0001-90'), true);
+      expect(BRValidators.validateCNPJ('3W.YJX.41F/0001-10'), true);
     });
 
     test('valid alphanumeric CNPJ — lowercase is accepted', () {
       expect(BRValidators.validateCNPJ('nzk5mgm2000174'), true);
+      expect(BRValidators.validateCNPJ('1a2b3c4d5e6f34'), true);
     });
 
     test('invalid CNPJ — wrong check digits', () {
@@ -173,9 +178,11 @@ void main() {
 
     test('invalid mobile — wrong length', () {
       expect(BRValidators.validateMobileNumber('9999999'), false);
-      expect(BRValidators.validateMobileNumber('9999999999'), false);  // 10 digits
-      expect(BRValidators.validateMobileNumber('99999-99999'), false); // 10 digits
-      expect(BRValidators.validateMobileNumber('99999-999'), false);   // 8 digits
+      expect(
+          BRValidators.validateMobileNumber('9999999999'), false); // 10 digits
+      expect(
+          BRValidators.validateMobileNumber('99999-99999'), false); // 10 digits
+      expect(BRValidators.validateMobileNumber('99999-999'), false); // 8 digits
       expect(BRValidators.validateMobileNumber(''), false);
     });
 
@@ -231,23 +238,33 @@ void main() {
     test('valid PIX — CNPJ key', () {
       expect(BRValidators.validatePixKey('69.404.688/0001-71'), true);
       expect(BRValidators.validatePixKey('NZK5MGM2000174'), true);
+      expect(BRValidators.validatePixKey('1A2B3C4D5E6F34'), true);
     });
 
     test('valid PIX — e-mail key', () {
       expect(BRValidators.validatePixKey('user@example.com'), true);
-      expect(BRValidators.validatePixKey('nome.sobrenome+tag@empresa.com.br'), true);
+      expect(BRValidators.validatePixKey('nome.sobrenome+tag@empresa.com.br'),
+          true);
       expect(BRValidators.validatePixKey('a@b.co'), true);
     });
 
     test('valid PIX — phone key (+55...)', () {
-      expect(BRValidators.validatePixKey('+5511999999999'), true);  // 11-digit mobile
-      expect(BRValidators.validatePixKey('+551133334444'), true);   // 10-digit landline
+      expect(BRValidators.validatePixKey('+5511999999999'),
+          true); // 11-digit mobile
+      expect(BRValidators.validatePixKey('+551133334444'),
+          true); // 10-digit landline
     });
 
     test('valid PIX — random UUID v4 key', () {
-      expect(BRValidators.validatePixKey('123e4567-e89b-4d3c-a456-426614174000'), true);
-      expect(BRValidators.validatePixKey('550e8400-e29b-41d4-a716-446655440000'), true);
-      expect(BRValidators.validatePixKey('6ba7b810-9dad-4b49-8f3a-b8a3f6bfeeda'), true);
+      expect(
+          BRValidators.validatePixKey('123e4567-e89b-4d3c-a456-426614174000'),
+          true);
+      expect(
+          BRValidators.validatePixKey('550e8400-e29b-41d4-a716-446655440000'),
+          true);
+      expect(
+          BRValidators.validatePixKey('6ba7b810-9dad-4b49-8f3a-b8a3f6bfeeda'),
+          true);
     });
 
     test('invalid PIX — empty string', () {
@@ -266,8 +283,12 @@ void main() {
     });
 
     test('invalid PIX — UUID wrong version (not v4)', () {
-      expect(BRValidators.validatePixKey('123e4567-e89b-3d3c-a456-426614174000'), false); // v3
-      expect(BRValidators.validatePixKey('123e4567-e89b-5d3c-a456-426614174000'), false); // v5
+      expect(
+          BRValidators.validatePixKey('123e4567-e89b-3d3c-a456-426614174000'),
+          false); // v3
+      expect(
+          BRValidators.validatePixKey('123e4567-e89b-5d3c-a456-426614174000'),
+          false); // v5
     });
 
     test('invalid PIX — random garbage', () {
@@ -282,22 +303,28 @@ void main() {
       expect(BRValidators.validateVehiclePlate('ABC-1234'), true);
       expect(BRValidators.validateVehiclePlate('ABC1234'), true);
       expect(BRValidators.validateVehiclePlate('ZZZ9999'), true);
-      expect(BRValidators.validateVehiclePlate('aaa-1234'), true); // lowercase OK
+      expect(
+          BRValidators.validateVehiclePlate('aaa-1234'), true); // lowercase OK
     });
 
     test('valid Mercosul plates (LLL-NLNN)', () {
       expect(BRValidators.validateVehiclePlate('ABC1D23'), true);
       expect(BRValidators.validateVehiclePlate('ABC-1D23'), true);
       expect(BRValidators.validateVehiclePlate('ZZZ9Z99'), true);
-      expect(BRValidators.validateVehiclePlate('abc1d23'), true); // lowercase OK
+      expect(
+          BRValidators.validateVehiclePlate('abc1d23'), true); // lowercase OK
     });
 
     test('invalid plate — wrong letter/digit pattern', () {
-      expect(BRValidators.validateVehiclePlate('AB-1234'), false);    // only 2 letters
-      expect(BRValidators.validateVehiclePlate('ABCD1234'), false);   // 4 letters
-      expect(BRValidators.validateVehiclePlate('ABC-123'), false);    // only 3 digits
-      expect(BRValidators.validateVehiclePlate('1BC-1234'), false);   // starts with digit
-      expect(BRValidators.validateVehiclePlate('ABC-12D4'), false);   // digit at pos 4 but not Mercosul
+      expect(BRValidators.validateVehiclePlate('AB-1234'),
+          false); // only 2 letters
+      expect(BRValidators.validateVehiclePlate('ABCD1234'), false); // 4 letters
+      expect(
+          BRValidators.validateVehiclePlate('ABC-123'), false); // only 3 digits
+      expect(BRValidators.validateVehiclePlate('1BC-1234'),
+          false); // starts with digit
+      expect(BRValidators.validateVehiclePlate('ABC-12D4'),
+          false); // digit at pos 4 but not Mercosul
     });
 
     test('invalid plate — empty or too short', () {
@@ -345,7 +372,8 @@ void main() {
       test('valid', () {
         expect(BRValidators.validateIE('0130000000025', 'AC'), true);
         expect(BRValidators.validateIE('0131234567801', 'AC'), true);
-        expect(BRValidators.validateIE('01.300.000.000-25', 'AC'), true); // formatted
+        expect(BRValidators.validateIE('01.300.000.000-25', 'AC'),
+            true); // formatted
       });
       test('invalid — wrong check', () {
         expect(BRValidators.validateIE('0130000000026', 'AC'), false);
@@ -687,15 +715,15 @@ void main() {
     test('valid — all 28 state codes', () {
       // Generated: seq=18004249, state code varied
       const validTitulos = {
-        1:  '200000000176', // SP special rule
-        2:  '100000000292', // MG special rule
-        3:  '180042490309',
-        4:  '180042490401',
-        5:  '180042490504',
-        6:  '180042490607',
-        7:  '180042490700',
-        8:  '180042490802',
-        9:  '180042490905',
+        1: '200000000176', // SP special rule
+        2: '100000000292', // MG special rule
+        3: '180042490309',
+        4: '180042490401',
+        5: '180042490504',
+        6: '180042490607',
+        7: '180042490700',
+        8: '180042490802',
+        9: '180042490905',
         10: '180042491004',
         11: '180042491107',
         12: '180042491200',
@@ -746,8 +774,10 @@ void main() {
     });
 
     test('invalid — wrong length', () {
-      expect(BRValidators.validateTituloEleitor('18004249060'), false);  // 11 digits
-      expect(BRValidators.validateTituloEleitor('1800424906070'), false); // 13 digits
+      expect(BRValidators.validateTituloEleitor('18004249060'),
+          false); // 11 digits
+      expect(BRValidators.validateTituloEleitor('1800424906070'),
+          false); // 13 digits
       expect(BRValidators.validateTituloEleitor(''), false);
     });
 
@@ -766,8 +796,10 @@ void main() {
     });
 
     test('valid IBAN — spaces stripped', () {
-      expect(BRValidators.validateIBAN('BR61 00000000 00001 0123456789 C 1'), true);
-      expect(BRValidators.validateIBAN('BR47 00000000 00001 0000000001 P 2'), true);
+      expect(BRValidators.validateIBAN('BR61 00000000 00001 0123456789 C 1'),
+          true);
+      expect(BRValidators.validateIBAN('BR47 00000000 00001 0000000001 P 2'),
+          true);
     });
 
     test('invalid IBAN — wrong check digits', () {
@@ -781,8 +813,10 @@ void main() {
     });
 
     test('invalid IBAN — wrong length', () {
-      expect(BRValidators.validateIBAN('BR6100000000000010123456789C'), false);   // 28
-      expect(BRValidators.validateIBAN('BR6100000000000010123456789C10'), false); // 30
+      expect(BRValidators.validateIBAN('BR6100000000000010123456789C'),
+          false); // 28
+      expect(BRValidators.validateIBAN('BR6100000000000010123456789C10'),
+          false); // 30
       expect(BRValidators.validateIBAN(''), false);
     });
 
@@ -807,12 +841,12 @@ void main() {
     });
 
     test('invalid passport — wrong letter count', () {
-      expect(BRValidators.validatePassport('A1234567'), false);  // 1 letter
-      expect(BRValidators.validatePassport('ABC12345'), false);  // 3 letters
+      expect(BRValidators.validatePassport('A1234567'), false); // 1 letter
+      expect(BRValidators.validatePassport('ABC12345'), false); // 3 letters
     });
 
     test('invalid passport — wrong digit count', () {
-      expect(BRValidators.validatePassport('AB12345'), false);   // 5 digits
+      expect(BRValidators.validatePassport('AB12345'), false); // 5 digits
       expect(BRValidators.validatePassport('AB1234567'), false); // 7 digits
     });
 
@@ -830,29 +864,80 @@ void main() {
   group('UF validator', () {
     test('all 27 valid UFs — uppercase', () {
       const validUFs = [
-        'AC','AL','AM','AP','BA','CE','DF','ES','GO','MA',
-        'MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN',
-        'RO','RR','RS','SC','SE','SP','TO',
+        'AC',
+        'AL',
+        'AM',
+        'AP',
+        'BA',
+        'CE',
+        'DF',
+        'ES',
+        'GO',
+        'MA',
+        'MG',
+        'MS',
+        'MT',
+        'PA',
+        'PB',
+        'PE',
+        'PI',
+        'PR',
+        'RJ',
+        'RN',
+        'RO',
+        'RR',
+        'RS',
+        'SC',
+        'SE',
+        'SP',
+        'TO',
       ];
       for (final uf in validUFs) {
-        expect(BRValidators.validateUF(uf), true, reason: '$uf should be valid');
+        expect(BRValidators.validateUF(uf), true,
+            reason: '$uf should be valid');
       }
     });
 
     test('all 27 valid UFs — lowercase accepted', () {
       const validUFs = [
-        'ac','al','am','ap','ba','ce','df','es','go','ma',
-        'mg','ms','mt','pa','pb','pe','pi','pr','rj','rn',
-        'ro','rr','rs','sc','se','sp','to',
+        'ac',
+        'al',
+        'am',
+        'ap',
+        'ba',
+        'ce',
+        'df',
+        'es',
+        'go',
+        'ma',
+        'mg',
+        'ms',
+        'mt',
+        'pa',
+        'pb',
+        'pe',
+        'pi',
+        'pr',
+        'rj',
+        'rn',
+        'ro',
+        'rr',
+        'rs',
+        'sc',
+        'se',
+        'sp',
+        'to',
       ];
       for (final uf in validUFs) {
-        expect(BRValidators.validateUF(uf), true, reason: '$uf lowercase should be valid');
+        expect(BRValidators.validateUF(uf), true,
+            reason: '$uf lowercase should be valid');
       }
     });
 
     test('invalid UFs — non-existent codes', () {
-      for (final uf in ['XX','BR','EU','US','00','AB','ZZ','AA']) {
-        expect(BRValidators.validateUF(uf), false, reason: '$uf should be invalid');
+      for (final uf in ['XX', 'BR', 'EU', 'US', '00', 'AB', 'ZZ', 'AA']) {
+        expect(BRValidators.validateUF(uf), false,
+            reason: '$uf should be invalid');
       }
     });
 
@@ -892,8 +977,9 @@ void main() {
 
     test('invalid NUP — wrong length', () {
       expect(BRValidators.validateNUP('123'), false);
-      expect(BRValidators.validateNUP('0000000000120230'), false);   // 16 digits
-      expect(BRValidators.validateNUP('000000000012023050'), false); // 18 digits
+      expect(BRValidators.validateNUP('0000000000120230'), false); // 16 digits
+      expect(
+          BRValidators.validateNUP('000000000012023050'), false); // 18 digits
       expect(BRValidators.validateNUP(''), false);
     });
 

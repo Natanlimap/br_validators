@@ -50,8 +50,6 @@ class _CNPJValidator {
   }
 
   /// Converts an alphanumeric character to its numeric value for CNPJ calculation.
-  /// According to the new RFB rules, the value is simply `ASCII(char) - 48`.
-  static int _charValue(String char) {
-    return char.codeUnitAt(0) - 48;
-  }
+  /// Uses ASCII value minus 48 per IN RFB 2.229/2024: digits 0–9 → 0–9, A–Z → 17–42.
+  static int _charValue(String char) => char.codeUnitAt(0) - 48;
 }

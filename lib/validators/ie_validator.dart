@@ -9,34 +9,62 @@ class _IEValidator {
   static bool validate(String ie, String uf) {
     ie = ie.replaceAll(RegExp(r'[.\-/\s]'), '').toUpperCase();
     switch (uf.toUpperCase()) {
-      case 'AC': return _ac(ie);
-      case 'AL': return _al(ie);
-      case 'AM': return _am(ie);
-      case 'AP': return _ap(ie);
-      case 'BA': return _ba(ie);
-      case 'CE': return _ce(ie);
-      case 'DF': return _df(ie);
-      case 'ES': return _es(ie);
-      case 'GO': return _go(ie);
-      case 'MA': return _ma(ie);
-      case 'MG': return _mg(ie);
-      case 'MS': return _ms(ie);
-      case 'MT': return _mt(ie);
-      case 'PA': return _pa(ie);
-      case 'PB': return _pb(ie);
-      case 'PE': return _pe(ie);
-      case 'PI': return _pi(ie);
-      case 'PR': return _pr(ie);
-      case 'RJ': return _rj(ie);
-      case 'RN': return _rn(ie);
-      case 'RO': return _ro(ie);
-      case 'RR': return _rr(ie);
-      case 'RS': return _rs(ie);
-      case 'SC': return _sc(ie);
-      case 'SE': return _se(ie);
-      case 'SP': return _sp(ie);
-      case 'TO': return _to(ie);
-      default:   return false;
+      case 'AC':
+        return _ac(ie);
+      case 'AL':
+        return _al(ie);
+      case 'AM':
+        return _am(ie);
+      case 'AP':
+        return _ap(ie);
+      case 'BA':
+        return _ba(ie);
+      case 'CE':
+        return _ce(ie);
+      case 'DF':
+        return _df(ie);
+      case 'ES':
+        return _es(ie);
+      case 'GO':
+        return _go(ie);
+      case 'MA':
+        return _ma(ie);
+      case 'MG':
+        return _mg(ie);
+      case 'MS':
+        return _ms(ie);
+      case 'MT':
+        return _mt(ie);
+      case 'PA':
+        return _pa(ie);
+      case 'PB':
+        return _pb(ie);
+      case 'PE':
+        return _pe(ie);
+      case 'PI':
+        return _pi(ie);
+      case 'PR':
+        return _pr(ie);
+      case 'RJ':
+        return _rj(ie);
+      case 'RN':
+        return _rn(ie);
+      case 'RO':
+        return _ro(ie);
+      case 'RR':
+        return _rr(ie);
+      case 'RS':
+        return _rs(ie);
+      case 'SC':
+        return _sc(ie);
+      case 'SE':
+        return _se(ie);
+      case 'SP':
+        return _sp(ie);
+      case 'TO':
+        return _to(ie);
+      default:
+        return false;
     }
   }
 
@@ -143,9 +171,18 @@ class _IEValidator {
     // First check digit: expand first 11 digits inserting 0 after position 3,
     // then apply alternating weights [1,2] and sum the individual product digits.
     final expanded = [
-      d[0], d[1], d[2], 0,
-      d[3], d[4], d[5], d[6], d[7], d[8],
-      d[9], d[10]
+      d[0],
+      d[1],
+      d[2],
+      0,
+      d[3],
+      d[4],
+      d[5],
+      d[6],
+      d[7],
+      d[8],
+      d[9],
+      d[10]
     ];
     const w1 = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
     int sum1 = 0;
